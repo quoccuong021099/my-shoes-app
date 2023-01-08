@@ -4,9 +4,9 @@ import Header from '../components/Header';
 
 export default function DefaultLayout({ children }) {
   return (
-    <Box>
+    <Box sx={{ backgroundColor: '#ee47074d' }}>
       <Header />
-      {children}
+      <Box>{children}</Box>
       <Footer />
     </Box>
   );

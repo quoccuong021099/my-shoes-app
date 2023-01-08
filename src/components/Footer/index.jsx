@@ -1,3 +1,5 @@
+import { Container } from '@mui/material';
+
 export default function Footer() {
-  return <>Footer</>;
+  return <Container maxWidth="xl">Footer</Container>;
 }
