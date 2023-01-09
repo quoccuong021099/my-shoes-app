@@ -1,11 +1,12 @@
 import { Box, Container } from '@mui/material';
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getListProduct, listProduct } from './homeSlice';
+import { useDispatch } from 'react-redux';
+import CarouselIntro from '../../components/Carousel/CarouselIntro';
+import { getListProduct } from './homeSlice';
 
 export default function Home() {
   const dispatch = useDispatch();
-  const listProducts = useSelector(listProduct);
+  // const listProducts = useSelector(listProduct);
 
   useEffect(() => {
     dispatch(getListProduct({ page: 1 }));
@@ -13,205 +14,10 @@ export default function Home() {
   }, []);
 
   return (
-    <Container maxWidth="xl">
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-      Home Home Home Home Home Home Home Home Home Home Home Home Home Home Home
-    </Container>
+    <Box>
+      <Container maxWidth="xl">
+        <CarouselIntro />
+      </Container>
+    </Box>
   );
 }

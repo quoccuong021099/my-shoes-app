@@ -8,6 +8,9 @@ const images = {
   personIcon: require('./user.png'),
   reduxSagaIcon: require('./Redux-Saga-Logo.png'),
   logo: require('./logo.webp'),
+  bg1: require('./bg1.webp'),
+  bg2: require('./bg2.jpg'),
+  bg3: require('./bg3.jpg'),
 };
 
 export default images;

@@ -9,7 +9,17 @@ import HeaderRight from './HeaderRight';
 function Header() {
   return (
     <>
-      <AppBar sx={{ minHeight: '64px' }}>
+      <AppBar
+        sx={{
+          minHeight: {
+            xs: '64px',
+            md: '76px',
+          },
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'center',
+        }}
+      >
         <Container maxWidth="xl">
           <Toolbar
             disableGutters
@@ -20,7 +30,7 @@ function Header() {
           </Toolbar>
         </Container>
       </AppBar>
-      <Box sx={{ minHeight: '64px' }} />
+      <Box sx={{ minHeight: { xs: '64px', md: '76px' } }} />
     </>
   );
 }

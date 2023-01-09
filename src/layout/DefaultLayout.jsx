@@ -6,7 +6,7 @@ export default function DefaultLayout({ children }) {
   return (
     <Box sx={{ backgroundColor: '#262a2b' }}>
       <Header />
-      <Box>{children}</Box>
+      <Box sx={{ minHeight: '100vh' }}>{children}</Box>
       <Footer />
     </Box>
   );

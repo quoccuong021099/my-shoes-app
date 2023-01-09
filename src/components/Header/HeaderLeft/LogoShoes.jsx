@@ -10,9 +10,8 @@ export default function LogoShoes({ color, ...rest }) {
       component={LinkTo}
       sx={(theme) => ({
         display: 'flex',
-        marginX: 1,
         borderRadius: 6,
-        p: 1,
+        py: 1,
         textDecoration: 'none',
         color: color || theme.palette.primary.main,
       })}
