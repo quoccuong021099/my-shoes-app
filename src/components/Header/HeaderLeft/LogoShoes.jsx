@@ -1,9 +1,9 @@
 import { Link } from '@mui/material';
 import React from 'react';
 import { Link as LinkTo } from 'react-router-dom';
-import { ShoesIcon } from '../../icons';
+import images from '../../../assets/images';
 
-export default function LogoShoes({ color }) {
+export default function LogoShoes({ color, ...rest }) {
   return (
     <Link
       to="/"
@@ -11,17 +11,14 @@ export default function LogoShoes({ color }) {
       sx={(theme) => ({
         display: 'flex',
         marginX: 1,
-        border: '1px dotted #ccc',
         borderRadius: 6,
         p: 1,
-        m: 1,
-        mt: 0,
         textDecoration: 'none',
         color: color || theme.palette.primary.main,
       })}
+      {...rest}
     >
-      <ShoesIcon />
-      &nbsp; <span>Run with me</span>
+      <img src={images.logo} alt="logo" width={120} height={60} />
     </Link>
   );
 }

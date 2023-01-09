@@ -30,14 +30,33 @@ export default function HeaderLeft() {
       >
         <LogoShoes color="#fff" />
 
-        <Box sx={{ display: 'flex', marginX: 1 }}>
+        <Box sx={{ display: 'flex' }}>
           <ListBrand
             data={listBrand}
             style={() => ({
-              color: 'white',
+              color: '#fff',
               display: 'block',
               textDecoration: 'none',
               marginX: 2,
+              p: 2.2,
+              border: '2px solid transparent',
+              borderRadius: 2,
+              '@keyframes example': {
+                '0%': { borderRight: '2px solid #fff' },
+                '25%': {
+                  borderTop: '2px solid #fff',
+                },
+                '50%': {
+                  borderLeft: '2px solid #fff',
+                },
+                '100%': {
+                  borderBottom: '2px solid #fff',
+                },
+              },
+              '&:hover': {
+                backgroundColor: '#000',
+                animation: '.5s ease-in infinite example',
+              },
             })}
           />
         </Box>

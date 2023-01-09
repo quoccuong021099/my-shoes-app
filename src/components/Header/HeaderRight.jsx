@@ -31,32 +31,34 @@ export default function HeaderRight() {
         alignItems: 'center',
       }}
     >
-      <IconButton sx={{ mr: 2 }}>
-        <Badge
-          overlap="circular"
-          anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-          badgeContent={
-            <Typography
-              color="error"
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                backgroundColor: 'red',
-                color: '#fff',
-                borderRadius: '50%',
-                fontSize: '0.8rem',
-                width: 18,
-                height: 18,
-              }}
-            >
-              5
-            </Typography>
-          }
-        >
-          <CartIcon color="white" />
-        </Badge>
-      </IconButton>
+      <Tooltip title="Cart">
+        <IconButton sx={{ mr: 2 }}>
+          <Badge
+            overlap="circular"
+            anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+            badgeContent={
+              <Typography
+                color="error"
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  backgroundColor: 'red',
+                  color: '#fff',
+                  borderRadius: '50%',
+                  fontSize: '0.8rem',
+                  width: 18,
+                  height: 18,
+                }}
+              >
+                5
+              </Typography>
+            }
+          >
+            <CartIcon color="white" fontSize="large" />
+          </Badge>
+        </IconButton>
+      </Tooltip>
       <Tooltip title="Open settings">
         <IconButton
           onClick={(event) => setAnchorElUser(event.currentTarget)}

@@ -6,6 +6,8 @@ const images = {
   jordanIcon: require('./jordan.webp'),
   otherBrand: require('./other.png'),
   personIcon: require('./user.png'),
+  reduxSagaIcon: require('./Redux-Saga-Logo.png'),
+  logo: require('./logo.webp'),
 };
 
 export default images;
