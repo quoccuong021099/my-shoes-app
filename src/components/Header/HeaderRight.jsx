@@ -10,13 +10,13 @@ import React, { useState } from 'react';
 import { Link as LinkTo } from 'react-router-dom';
 import { CartIcon, LogoutIcon, PersonIcon } from '../icons';
 import images from '../../assets/images';
-const settings = [
-  { label: 'Profile', icon: PersonIcon },
-  { label: 'Cart', icon: CartIcon },
-  { label: 'Logout', icon: LogoutIcon },
-];
 export default function HeaderRight() {
   const [anchorElUser, setAnchorElUser] = useState(null);
+  const settings = [
+    { label: 'Profile', icon: PersonIcon },
+    { label: 'Cart', icon: CartIcon },
+    { label: 'Logout', icon: LogoutIcon },
+  ];
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);

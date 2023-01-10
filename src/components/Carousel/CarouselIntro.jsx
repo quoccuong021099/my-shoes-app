@@ -2,8 +2,8 @@ import { Paper } from '@mui/material';
 import Carousel from 'react-material-ui-carousel';
 import images from '../../assets/images';
 
-var items = [images.bg1, images.bg2, images.bg3];
 export default function CarouselIntro() {
+  const items = [images.bg1, images.bg2, images.bg3];
   return (
     <Carousel
       autoPlay

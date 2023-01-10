@@ -8,7 +8,7 @@ import {
 
 function* getListProductSaga({ payload }) {
   try {
-    const res = yield call(productApi.getAll, { payload });
+    const res = yield call(productApi.getAll, payload);
     yield put(getListProductSuccess(res));
   } catch (error) {
     yield put(getListProductFailed(error));

@@ -8,15 +8,14 @@ import { MenuIcon } from '../../icons';
 import ListBrand from './ListBrand';
 import LogoShoes from './LogoShoes';
 
-const listBrand = [
-  { label: 'Nike', icon: images.nikeIcon },
-  { label: 'Adidas', icon: images.adidasIcon },
-  { label: 'Jordan', icon: images.jordanIcon },
-  { label: 'Other brands', icon: images.otherBrand },
-];
-
 export default function HeaderLeft() {
   const [anchorElNav, setAnchorElNav] = useState(null);
+  const listBrand = [
+    { label: 'Nike', icon: images.nikeIcon },
+    { label: 'Adidas', icon: images.adidasIcon },
+    { label: 'Jordan', icon: images.jordanIcon },
+    { label: 'Other brands', icon: images.otherBrand },
+  ];
 
   return (
     <>

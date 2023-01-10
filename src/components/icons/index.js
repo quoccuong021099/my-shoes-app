@@ -12,3 +12,7 @@ export * from './MaterialIcon';
 export * from './ReduxToolkitIcon';
 export * from './ReactIcon';
 export * from './FlowerIcon';
+export * from './MoneyIcon';
+export * from './SupportAgentIcon';
+export * from './DeliveryIcon';
+export * from './DoubleArrowIcon';
