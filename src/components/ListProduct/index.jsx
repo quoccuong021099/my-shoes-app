@@ -3,7 +3,7 @@ import { Box } from '@mui/system';
 import { DoubleArrowIcon } from '../icons';
 import ProductItem from './ProductItem';
 
-export default function ListProduct({ title }) {
+export default function ListProduct({ title, listProducts }) {
   return (
     <Box mt={5}>
       <Typography
@@ -11,7 +11,7 @@ export default function ListProduct({ title }) {
           color: '#fff',
           display: 'flex',
           alignItems: 'center',
-          fontSize: '20px',
+          fontSize: '24px',
         }}
       >
         <DoubleArrowIcon fontSize="medium" />
@@ -25,14 +25,9 @@ export default function ListProduct({ title }) {
           flexWrap: 'wrap',
         }}
       >
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
+        {listProducts.map((item, index) => (
+          <ProductItem data={item} key={index} />
+        ))}
       </Stack>
     </Box>
   );

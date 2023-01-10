@@ -11,6 +11,7 @@ const images = {
   bg1: require('./bg1.webp'),
   bg2: require('./bg2.jpg'),
   bg3: require('./bg3.jpg'),
+  hotDeal: require('./Hot-Deal.png'),
 };
 
 export default images;

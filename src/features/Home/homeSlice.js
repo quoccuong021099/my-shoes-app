@@ -27,7 +27,7 @@ export const { getListProduct, getListProductSuccess, getListProductFailed } =
   homeSlice.actions;
 
 // selector
-export const listProduct = (state) => state.home.data;
-export const status = (state) => state.home.status;
+export const selectListProduct = (state) => state.home.data;
+export const selectStatusListProduct = (state) => state.home.status;
 
 export default homeSlice.reducer;
