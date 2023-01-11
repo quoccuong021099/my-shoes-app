@@ -8,6 +8,17 @@ import React from 'react';
 import images from '../../../assets/images';
 export default function ProductItem({ data }) {
   const { name, price, discount, image, star } = data;
+
+  const newPrice = price.replaceAll(/[.,]/g, '');
+
+  const priceWithDiscount = newPrice - (discount * newPrice) / 100;
+
+  const convertCurrency = (number) =>
+    number.toLocaleString('vi-VN', {
+      style: 'currency',
+      currency: 'VND',
+    });
+
   return (
     <Card
       sx={{
@@ -54,10 +65,10 @@ export default function ProductItem({ data }) {
             mt={1}
           >
             <Typography variant="body2" sx={{ textDecoration: 'line-through' }}>
-              {price}đ
+              {convertCurrency(+newPrice)}
             </Typography>
             <Typography color="red" variant="h6">
-              <b>{price}đ</b>
+              <b>{convertCurrency(priceWithDiscount)}</b>
             </Typography>
           </Box>
         </Box>
