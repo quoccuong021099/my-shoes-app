@@ -1,8 +1,9 @@
+import Cart from '../features/Cart';
 import Home from '../features/Home';
 
 const routes = {
   home: '/',
-  //   following: '/following',
+  cart: '/cart',
   //   profile: '/@:nickname',
   //   upload: '/upload',
   //   search: '/search',
@@ -13,6 +14,10 @@ export const publicRoutes = [
   {
     path: routes.home,
     component: Home,
+  },
+  {
+    path: routes.cart,
+    component: Cart,
   },
 ];
 export const privateRoutes = [];

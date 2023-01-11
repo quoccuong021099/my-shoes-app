@@ -55,7 +55,9 @@ export default function HeaderRight() {
               </Typography>
             }
           >
-            <CartIcon color="white" fontSize="large" />
+            <LinkTo to="/cart">
+              <CartIcon color="white" fontSize="large" />
+            </LinkTo>
           </Badge>
         </IconButton>
       </Tooltip>

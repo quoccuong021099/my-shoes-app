@@ -16,3 +16,5 @@ export * from './MoneyIcon';
 export * from './SupportAgentIcon';
 export * from './DeliveryIcon';
 export * from './DoubleArrowIcon';
+export * from './CloseIcon';
+export * from './ArrowBackIcon';
