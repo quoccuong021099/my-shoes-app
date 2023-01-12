@@ -12,6 +12,8 @@ const images = {
   bg2: require('./bg2.jpg'),
   bg3: require('./bg3.jpg'),
   hotDeal: require('./Hot-Deal.png'),
+  noProduct: require('./no-product-found.png'),
+  page404: require('./page404.webp'),
 };
 
 export default images;

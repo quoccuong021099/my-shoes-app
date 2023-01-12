@@ -1,5 +1,6 @@
 import { Box, Container, IconButton, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
+import BackHomeButton from '../../components/BackHomeButton';
 import { ArrowBackIcon, CartIcon } from '../../components/icons';
 import ListCart from '../../components/ListCart';
 
@@ -24,11 +25,7 @@ export default function Cart() {
           <CartIcon sx={{ fontSize: 40, mr: 1 }} />
           <span>Cart</span>
         </Typography>
-        <Link to="/">
-          <IconButton sx={{ '&: hover': { backgroundColor: '#000' } }}>
-            <ArrowBackIcon color="white" sx={{ fontSize: 40 }} />
-          </IconButton>
-        </Link>
+        <BackHomeButton />
       </Box>
       <Box mt={1}>
         <ListCart />

@@ -74,7 +74,7 @@ export default function CartItem() {
           10.000.000 đ
         </Typography>
         <Button color="secondary" variant="contained">
-          Book now
+          Order now
         </Button>
       </CardActions>
     </Card>

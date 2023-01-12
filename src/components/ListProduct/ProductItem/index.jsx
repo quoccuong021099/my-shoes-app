@@ -1,17 +1,21 @@
-import { Button, Divider, Rating } from '@mui/material';
+import { Button, Divider, IconButton, Rating, Tooltip } from '@mui/material';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Box } from '@mui/system';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import images from '../../../assets/images';
+import { AddCartIcon } from '../../icons';
 export default function ProductItem({ data }) {
-  const { name, price, discount, image, star } = data;
+  const { name, price, discount, image, star, id } = data;
 
   const newPrice = price.replaceAll(/[.,]/g, '');
 
   const priceWithDiscount = newPrice - (discount * newPrice) / 100;
+
+  const navigate = useNavigate();
 
   const convertCurrency = (number) =>
     number.toLocaleString('vi-VN', {
@@ -44,7 +48,7 @@ export default function ProductItem({ data }) {
           sx={{
             position: 'absolute',
             top: 0,
-            right: 0,
+            left: 0,
             animation: '.5s ease-in infinite tim',
             borderRadius: '50%',
             border: '3px solid transparent',
@@ -53,6 +57,27 @@ export default function ProductItem({ data }) {
           <img src={images.hotDeal} alt="hot Deal" width="50px" height="50px" />
         </Box>
       )}
+
+      <Tooltip title="Add to cart">
+        <IconButton
+          sx={{
+            position: 'absolute',
+            top: 0,
+            right: 0,
+            borderRadius: '50%',
+            width: '45px',
+            height: '45px',
+            backgroundColor: '#0288d1',
+            color: '#fff',
+            '&:hover': {
+              backgroundColor: '#0288d1',
+            },
+          }}
+        >
+          <AddCartIcon />
+        </IconButton>
+      </Tooltip>
+
       <CardContent sx={{ width: '100%' }}>
         <CardMedia component="img" height="180" image={image} alt={name} />
         <Divider sx={{ my: 1 }} />
@@ -65,7 +90,7 @@ export default function ProductItem({ data }) {
             mt={1}
           >
             <Typography variant="body2" sx={{ textDecoration: 'line-through' }}>
-              {convertCurrency(+newPrice)}
+              {discount === 0 ? '' : convertCurrency(+newPrice)}
             </Typography>
             <Typography color="red" variant="h6">
               <b>{convertCurrency(priceWithDiscount)}</b>
@@ -85,7 +110,12 @@ export default function ProductItem({ data }) {
         }}
       >
         <Rating name="read-only" value={star || 0} readOnly size="small" />
-        <Button size="small" color="secondary" variant="contained">
+        <Button
+          size="small"
+          color="secondary"
+          variant="contained"
+          onClick={() => navigate(`/product/${id}`)}
+        >
           Book now
         </Button>
       </Box>

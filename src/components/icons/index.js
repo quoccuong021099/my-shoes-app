@@ -18,3 +18,5 @@ export * from './DeliveryIcon';
 export * from './DoubleArrowIcon';
 export * from './CloseIcon';
 export * from './ArrowBackIcon';
+export * from './AddCartIcon';
+export * from './ShoppingIcon';
