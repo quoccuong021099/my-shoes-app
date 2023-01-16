@@ -1,27 +1,17 @@
 import axiosClient from './axiosClient';
 
 const cartApi = {
-  getCart(token) {
+  getCart() {
     const url = '/cart';
-    return axiosClient.get(url, {
-      headers: { Authorization: `Bearer ${token}` },
-    });
+    return axiosClient.get(url);
   },
-  addItemCart(params, token) {
+  addItemCart(params) {
     const url = `/cart`;
-    return axiosClient.post(
-      url,
-      { params },
-      {
-        headers: { Authorization: `Bearer ${token}` },
-      },
-    );
+    return axiosClient.post(url, params);
   },
-  delCartItem(id, token) {
+  delCartItem(id) {
     const url = `/cart/${id}`;
-    return axiosClient.delete(url, {
-      headers: { Authorization: `Bearer ${token}` },
-    });
+    return axiosClient.delete(url);
   },
 };
 

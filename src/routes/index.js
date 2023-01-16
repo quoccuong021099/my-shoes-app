@@ -8,6 +8,7 @@ export const lishHash = ['#adidas', '#nike', '#jordan', '#other'];
 export const routes = {
   home: '/home',
   cart: '/cart',
+  profile: '/profile',
   notFound: '*',
   detail: '/product/:id',
 };
@@ -18,10 +19,6 @@ export const publicRoutes = [
     component: Home,
   },
   {
-    path: routes.cart,
-    component: Cart,
-  },
-  {
     path: routes.detail,
     component: DetailProduct,
   },
@@ -30,4 +27,13 @@ export const publicRoutes = [
     component: NotFoundPage,
   },
 ];
-export const privateRoutes = [];
+export const privateRoutes = [
+  {
+    path: routes.cart,
+    component: Cart,
+  },
+  {
+    path: routes.profile,
+    component: Cart,
+  },
+];

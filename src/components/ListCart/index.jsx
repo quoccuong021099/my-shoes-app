@@ -1,13 +1,16 @@
 import { Box } from '@mui/material';
 import CartItem from './CartItem';
 
-export default function ListCart() {
+export default function ListCart({ data, triggerDeleteCartItem }) {
   return (
     <Box>
-      <CartItem />
-      <CartItem />
-      <CartItem />
-      <CartItem />
+      {data?.map((item, index) => (
+        <CartItem
+          key={index}
+          data={item}
+          triggerDeleteCartItem={triggerDeleteCartItem}
+        />
+      ))}
     </Box>
   );
 }

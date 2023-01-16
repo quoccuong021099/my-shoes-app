@@ -9,17 +9,19 @@ import InfoStore from '../../components/InfoStore';
 import ListProduct from '../../components/ListProduct';
 import Loading from '../../components/Loading';
 import { lishHash } from '../../routes';
+import { addCart } from '../Cart/cartSlice';
 import {
   getListProduct,
   selectListProduct,
   selectStatusListProduct,
 } from './homeSlice';
 
-export default function Home() {
+export default function Home({ isLogin }) {
   const dispatch = useDispatch();
   const listProducts = useSelector(selectListProduct);
   const { isLoading } = useSelector(selectStatusListProduct);
   const { hash } = useLocation();
+  const triggerAddCart = (params) => dispatch(addCart(params));
 
   useEffect(() => {
     if (!isLoading) {
@@ -41,19 +43,25 @@ export default function Home() {
             {!lishHash.includes(hash) ? (
               <>
                 <ListProduct
+                isLogin={isLogin}
                   title="Hot product"
+                  triggerAddCart={triggerAddCart}
                   listProducts={filterArr(
                     listProducts.filter((item) => item.state === 'HOT'),
                   )}
                 />
                 <ListProduct
+                isLogin={isLogin}
                   title="New product"
+                  triggerAddCart={triggerAddCart}
                   listProducts={filterArr(
                     listProducts.filter((item) => item.state === 'NEW'),
                   )}
                 />
                 <ListProduct
+                isLogin={isLogin}
                   title="Hot Discount"
+                  triggerAddCart={triggerAddCart}
                   listProducts={filterArr(
                     listProducts.filter((item) => item.discount >= 15),
                   )}
@@ -62,7 +70,9 @@ export default function Home() {
             ) : (
               <>
                 <ListProduct
+                isLogin={isLogin}
                   title={hash.slice(1)}
+                  triggerAddCart={triggerAddCart}
                   listProducts={filterArr(
                     listProducts.filter((item) =>
                       item?.trademark

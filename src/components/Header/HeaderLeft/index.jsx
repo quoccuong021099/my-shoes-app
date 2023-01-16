@@ -8,14 +8,14 @@ import { MenuIcon } from '../../icons';
 import ListBrand from './ListBrand';
 import LogoShoes from './LogoShoes';
 
+export const listBrand = [
+  { label: 'Nike', icon: images.nikeIcon },
+  { label: 'Adidas', icon: images.adidasIcon },
+  { label: 'Jordan', icon: images.jordanIcon },
+  { label: 'Other brands', icon: images.otherBrand },
+];
 export default function HeaderLeft() {
   const [anchorElNav, setAnchorElNav] = useState(null);
-  const listBrand = [
-    { label: 'Nike', icon: images.nikeIcon },
-    { label: 'Adidas', icon: images.adidasIcon },
-    { label: 'Jordan', icon: images.jordanIcon },
-    { label: 'Other brands', icon: images.otherBrand },
-  ];
 
   return (
     <>
@@ -97,7 +97,9 @@ export default function HeaderLeft() {
             },
           }}
         >
-          <LogoShoes />
+          <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+            <LogoShoes onClick={() => setAnchorElNav(null)} />
+          </Box>
           <Divider />
           <ListBrand
             data={listBrand}
@@ -105,8 +107,10 @@ export default function HeaderLeft() {
               display: 'flex',
               textDecoration: 'none',
               alignItems: 'center',
+              width: '100%',
             })}
             isImg
+            onClick={() => setAnchorElNav(null)}
           />
         </Menu>
       </Box>

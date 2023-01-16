@@ -1,10 +1,16 @@
 import { Stack, Typography } from '@mui/material';
 import { Box } from '@mui/system';
+import AlertCommon from '../../features/AlertCommon';
 import { DoubleArrowIcon } from '../icons';
 import NoProduct from '../NoProduct';
 import ProductItem from './ProductItem';
 
-export default function ListProduct({ title = 'Product', listProducts }) {
+export default function ListProduct({
+  title = 'Product',
+  listProducts,
+  triggerAddCart,
+  isLogin,
+}) {
   return (
     <Box mt={5}>
       <Typography
@@ -28,12 +34,18 @@ export default function ListProduct({ title = 'Product', listProducts }) {
       >
         {listProducts.length > 0 ? (
           listProducts.map((item, index) => (
-            <ProductItem data={item} key={index} />
+            <ProductItem
+              data={item}
+              key={index}
+              triggerAddCart={triggerAddCart}
+              isLogin={isLogin}
+            />
           ))
         ) : (
           <NoProduct width={400} height={300} />
         )}
       </Stack>
+      <AlertCommon />
     </Box>
   );
 }

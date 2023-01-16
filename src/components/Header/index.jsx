@@ -1,12 +1,21 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Toolbar from '@mui/material/Toolbar';
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { getCart } from '../../features/Cart/cartSlice';
 import HeaderLeft from './HeaderLeft';
 import HeaderRight from './HeaderRight';
 
-function Header() {
+function Header({ isLogin }) {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (localStorage.getItem('token')) {
+      dispatch(getCart());
+    }
+  }, []);
   return (
     <>
       <AppBar
@@ -26,7 +35,7 @@ function Header() {
             sx={{ display: 'flex', justifyContent: 'space-between' }}
           >
             <HeaderLeft />
-            <HeaderRight />
+            <HeaderRight isLogin={isLogin} />
           </Toolbar>
         </Container>
       </AppBar>

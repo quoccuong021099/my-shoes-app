@@ -20,3 +20,6 @@ export * from './CloseIcon';
 export * from './ArrowBackIcon';
 export * from './AddCartIcon';
 export * from './ShoppingIcon';
+export * from './WarningIcon';
+export * from './CheckCircleIcon';
+export * from './ErrorIcon';

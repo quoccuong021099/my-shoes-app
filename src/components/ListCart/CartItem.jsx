@@ -6,12 +6,21 @@ import {
   CardContent,
   CardMedia,
   IconButton,
+  Rating,
   Tooltip,
   Typography,
 } from '@mui/material';
-import images from '../../assets/images';
+import { useNavigate } from 'react-router-dom';
+import { convertCurrency, replacePrice } from '../../common/convertCurrency';
 import { CloseIcon } from '../icons';
-export default function CartItem() {
+
+export default function CartItem({ data, triggerDeleteCartItem }) {
+  const { image, name, size, qty, price, id, star } = data;
+  const navigate = useNavigate();
+
+  const handleNavigate = () => {
+    navigate(`/product/${id}`);
+  };
   return (
     <Card
       variant="outlined"
@@ -29,33 +38,44 @@ export default function CartItem() {
         title="Delete this item"
         sx={{ position: 'absolute', right: 0, top: 0 }}
       >
-        <IconButton>
+        <IconButton onClick={() => triggerDeleteCartItem(id)}>
           <CloseIcon color="error" />
         </IconButton>
       </Tooltip>
       <Box sx={{ backgroundColor: '#000', display: 'flex' }}>
         <CardMedia
           component="img"
-          sx={{ width: 151, backgroundColor: '#fff', p: 1 }}
-          image={images.adidasIcon}
+          sx={{
+            width: 151,
+            backgroundColor: '#fff',
+            p: 1,
+            '&:hover': { cursor: 'pointer' },
+          }}
+          image={image}
           alt="Live from space album cover"
+          onClick={handleNavigate}
         />
         <CardContent sx={{ color: '#fff', py: 0 }}>
-          <Typography component="h5" variant="h5">
-            Name: Live From Space
+          <Rating name="read-only" value={star || 0} readOnly size="large" />
+          <Typography
+            component="h5"
+            variant="h5"
+            onClick={handleNavigate}
+            sx={{
+              '&:hover': { cursor: 'pointer', textDecoration: 'underline' },
+            }}
+          >
+            Name: {name}
           </Typography>
           <Typography variant="subtitle1" component="div">
-            Size: Mac Miller
+            Size: {size}
           </Typography>
           <Typography variant="subtitle1" component="div">
-            Quantity: Mac Miller
+            Quantity: {qty}
           </Typography>
           <Typography variant="subtitle1" component="div">
-            Price: Mac Miller
+            Price: {convertCurrency(+replacePrice(price))}
           </Typography>
-          {/* <Typography variant="subtitle1" component="div">
-          Total price: Mac Miller
-        </Typography> */}
         </CardContent>
       </Box>
       <CardActions
@@ -71,7 +91,7 @@ export default function CartItem() {
           Total price
         </Typography>
         <Typography color="error" variant="h5" sx={{ lineHeight: 2 }}>
-          10.000.000 đ
+          {convertCurrency(+replacePrice(price) * qty)}
         </Typography>
         <Button color="secondary" variant="contained">
           Order now

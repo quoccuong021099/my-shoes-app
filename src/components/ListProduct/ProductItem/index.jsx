@@ -7,9 +7,10 @@ import { Box } from '@mui/system';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import images from '../../../assets/images';
+import { convertCurrency } from '../../../common/convertCurrency';
 import { AddCartIcon } from '../../icons';
-export default function ProductItem({ data }) {
-  const { name, price, discount, image, star, id } = data;
+export default function ProductItem({ data, triggerAddCart, isLogin }) {
+  const { name, price, discount, image, star, id, size } = data;
 
   const newPrice = price.replaceAll(/[.,]/g, '');
 
@@ -17,11 +18,9 @@ export default function ProductItem({ data }) {
 
   const navigate = useNavigate();
 
-  const convertCurrency = (number) =>
-    number.toLocaleString('vi-VN', {
-      style: 'currency',
-      currency: 'VND',
-    });
+  const handleAddCart = () => {
+    triggerAddCart({ id, qty: 1, size: size?.split(' ')[0] });
+  };
 
   return (
     <Card
@@ -58,25 +57,27 @@ export default function ProductItem({ data }) {
         </Box>
       )}
 
-      <Tooltip title="Add to cart">
-        <IconButton
-          sx={{
-            position: 'absolute',
-            top: 0,
-            right: 0,
-            borderRadius: '50%',
-            width: '45px',
-            height: '45px',
-            backgroundColor: '#0288d1',
-            color: '#fff',
-            '&:hover': {
+      {isLogin && (
+        <Tooltip title="Add to cart" onClick={handleAddCart}>
+          <IconButton
+            sx={{
+              position: 'absolute',
+              top: 0,
+              right: 0,
+              borderRadius: '50%',
+              width: '45px',
+              height: '45px',
               backgroundColor: '#0288d1',
-            },
-          }}
-        >
-          <AddCartIcon />
-        </IconButton>
-      </Tooltip>
+              color: '#fff',
+              '&:hover': {
+                backgroundColor: '#0288d1',
+              },
+            }}
+          >
+            <AddCartIcon />
+          </IconButton>
+        </Tooltip>
+      )}
 
       <CardContent sx={{ width: '100%' }}>
         <CardMedia component="img" height="180" image={image} alt={name} />
