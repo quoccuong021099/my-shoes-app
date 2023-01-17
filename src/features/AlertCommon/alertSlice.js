@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   alertType: null,
   msgText: null,
-  isOpenProp: false,
+  isOpenProp: true,
 };
 
 const alertSlice = createSlice({

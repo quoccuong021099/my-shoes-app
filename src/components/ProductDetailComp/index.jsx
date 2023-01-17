@@ -8,8 +8,10 @@ import {
   Rating,
   Stack,
   Typography,
+  Link,
 } from '@mui/material';
 import { useState } from 'react';
+import { Link as LinkTo } from 'react-router-dom';
 import { convertCurrency, replacePrice } from '../../common/convertCurrency';
 import { AddCartIcon, ShoppingIcon } from '../../components/icons';
 import Login from '../../features/Login';
@@ -139,8 +141,19 @@ export default function DetailProductComp({ data, triggerAddcCart, isLogin }) {
             </Button>
             &nbsp;
             <Button color="secondary" variant="contained" fullWidth>
-              <ShoppingIcon fontSize="small" sx={{ mr: 1 }} />
-              <span>Order now</span>
+              <Link
+                component={LinkTo}
+                to="/order"
+                sx={{
+                  color: '#fff',
+                  textDecoration: 'none',
+                  display: 'flex',
+                  alignItems: 'center',
+                }}
+              >
+                <ShoppingIcon fontSize="small" sx={{ mr: 1 }} />
+                <span>Order now</span>
+              </Link>
             </Button>
           </Stack>
         ) : (

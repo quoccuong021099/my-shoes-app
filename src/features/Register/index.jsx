@@ -1,18 +1,21 @@
-import LoginForm from '../../components/LoginForm';
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
-import { login, selectStatusLogin } from './loginSlice';
-import { useEffect, useState } from 'react';
+import RegisterForm from '../../components/RegisterForm';
 import AlertCommon from '../AlertCommon';
+import {
+  register as registerAction,
+  selectStatusRegister,
+} from './registerSlice';
 
-export default function Login({ title = 'Log In', ...rest }) {
+export default function Register({ title = 'Register', ...rest }) {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
   const dispatch = useDispatch();
-  const { isLoading, isSuccess } = useSelector(selectStatusLogin);
+  const { isLoading, isSuccess } = useSelector(selectStatusRegister);
   const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
@@ -24,7 +27,7 @@ export default function Login({ title = 'Log In', ...rest }) {
   };
   const onSubmit = (data) => {
     if (data) {
-      dispatch(login(data));
+      dispatch(registerAction(data));
     }
   };
 
@@ -35,7 +38,7 @@ export default function Login({ title = 'Log In', ...rest }) {
   }, [isSuccess]);
   return (
     <div>
-      <LoginForm
+      <RegisterForm
         onSubmit={onSubmit}
         errors={errors}
         handleSubmit={handleSubmit}

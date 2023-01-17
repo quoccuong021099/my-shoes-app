@@ -6,17 +6,18 @@ import {
   DialogActions,
   DialogContent,
   DialogTitle,
+  Link,
   Slide,
   TextField,
+  Typography,
 } from '@mui/material';
 import { forwardRef } from 'react';
-import Register from '../../features/Register';
 
 const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-export default function LoginForm({
+export default function RegisterForm({
   onSubmit,
   register,
   handleSubmit,
@@ -26,21 +27,37 @@ export default function LoginForm({
   handleClickOpen,
   open,
   title,
+  text,
   ...rest
 }) {
   return (
     <Box sx={{ mx: 2 }} {...rest}>
-      <Button variant="outlined" onClick={handleClickOpen} color="third">
-        {title}
-      </Button>
+      {text ? (
+        <Link
+          onClick={handleClickOpen}
+          sx={{
+            textDecoration: 'none',
+            color: '#0288d1',
+            '&:hover': { textDecoration: 'underline', cursor: 'pointer' },
+          }}
+        >
+          <Typography component="span" variant="subtitle1">
+            {text}
+          </Typography>
+        </Link>
+      ) : (
+        <Button variant="outlined" onClick={handleClickOpen} color="third">
+          {title}
+        </Button>
+      )}
       <Dialog
         open={open}
         TransitionComponent={Transition}
         keepMounted
         onClose={handleClose}
-        aria-describedby="Login"
+        aria-describedby="Register"
       >
-        <DialogTitle>Log In</DialogTitle>
+        <DialogTitle>Register</DialogTitle>
         <DialogContent>
           <TextField
             fullWidth
@@ -70,10 +87,6 @@ export default function LoginForm({
             error={!!errors.password}
             helperText={errors?.password?.message}
           />
-          <Register
-            text="If you don't have an account, click here to register"
-            sx={{ mx: 0 }}
-          />
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} variant="outlined">
@@ -86,7 +99,7 @@ export default function LoginForm({
             disabled={isLoading}
             sx={{ color: '#fff' }}
           >
-            Log In
+            Register
             {isLoading && (
               <CircularProgress
                 size={24}

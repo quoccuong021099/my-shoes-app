@@ -7,7 +7,7 @@ const userApi = {
   },
   register(params) {
     const url = '/user';
-    return axiosClient.post(url, { params });
+    return axiosClient.post(url, params);
   },
 };
 export default userApi;

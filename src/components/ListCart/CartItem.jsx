@@ -6,11 +6,12 @@ import {
   CardContent,
   CardMedia,
   IconButton,
+  Link,
   Rating,
   Tooltip,
   Typography,
 } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+import { Link as LinkTo, useNavigate } from 'react-router-dom';
 import { convertCurrency, replacePrice } from '../../common/convertCurrency';
 import { CloseIcon } from '../icons';
 
@@ -94,7 +95,13 @@ export default function CartItem({ data, triggerDeleteCartItem }) {
           {convertCurrency(+replacePrice(price) * qty)}
         </Typography>
         <Button color="secondary" variant="contained">
-          Order now
+          <Link
+            component={LinkTo}
+            to="/order"
+            sx={{ color: '#fff', textDecoration: 'none' }}
+          >
+            Order now
+          </Link>
         </Button>
       </CardActions>
     </Card>

@@ -12,10 +12,10 @@ import HeaderRight from './HeaderRight';
 function Header({ isLogin }) {
   const dispatch = useDispatch();
   useEffect(() => {
-    if (localStorage.getItem('token')) {
+    if (isLogin) {
       dispatch(getCart());
     }
-  }, []);
+  }, [isLogin]);
   return (
     <>
       <AppBar

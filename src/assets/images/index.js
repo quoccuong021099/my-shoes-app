@@ -14,6 +14,7 @@ const images = {
   hotDeal: require('./Hot-Deal.png'),
   noProduct: require('./no-product-found.png'),
   page404: require('./page404.webp'),
+  bookingSuccess: require('./success.gif'),
 };
 
 export default images;
